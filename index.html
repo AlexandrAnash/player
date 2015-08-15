@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Плеер</title>
+    <link rel="stylesheet" type="text/css" href="css/player.css" />
+    <script type="text/javascript" src="js/player.js"></script>
+</head>
+<body>
+    <input id="audio_file" type="file" accept="audio/*" onchange="chooseFile(this)" />
+    <div class="player">
+        <div class="left w60 ">
+            <div class="controls">
+                <div id="current-name-audio"></div>
+                <div class="player-control left">
+                    <span id="play-img"
+                         onclick="play()"> </span>
+                    <span id="pause-img"
+                         onclick="pause()" > </span>
+
+                    <span id="stop-img"
+                          onclick="stop()"> </span>
+                          
+                    <span id="mute-img"
+                         onclick="mute()" > </span>
+                    <span id="unmute-img"
+                          onclick="unmute()"> </span>
+
+                </div>
+                <div class="value-control left">
+                    <input id="value-range" type="range" min="0" max="1" value="1" step="0.01" onchange="changeValue(this.value)">
+                </div>
+
+                <div>
+                    <input id="time-range" type="range" min="0" max="10" value="0" step="0.01" onchange="changeTrack(this.value)">
+                    <div id="time-audio"><span></span>/<span></span></div>
+                </div>
+            </div>
+            <div>
+                <button onclick="pop()">pop</button>
+                <button onclick="rock()">rock</button>
+                <button onclick="jazz()">jazz</button>
+                <button onclick="classical()">classical</button>
+                <button onclick="normal()">normal</button>
+            </div>
+            <div id="equalizer">
+
+            </div>
+            <div id="drop-zone">
+                Для загрузки, перетащите файл сюда.
+            </div>
+        </div>
+        <div class="left w40">
+            <div class="track-list">
+                <ul id="list-element"></ul>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
